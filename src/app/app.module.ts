@@ -22,11 +22,13 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
+import { RegisterfirstComponent } from './Component/registerfirst/registerfirst.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterfirstComponent
   ],
   imports: [
     BrowserModule,
