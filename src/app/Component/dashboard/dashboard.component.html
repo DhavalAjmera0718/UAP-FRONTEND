@@ -1,0 +1,85 @@
+
+
+<button mat-button color="primary" (click)="getAllApprovedata()"> All Approve Data</button>
+
+<!-- <p><a lass="link-warning" (click)="getAllApprovedata()">Get All Approve Data</a></p> -->
+
+<table class="table table-warning table-striped-columns">
+    <tr *ngIf="allApproveData !=null">
+        <th>Index No</th>
+        <th>bankId No</th>
+        <th>Branch</th>
+        <th>Created Date</th>
+        <th>Designation</th>
+        <th>Email Id</th>
+        <th>IFSC Code</th>
+        <th>Mobile No</th>
+        <th>Password </th>
+        <th>Status</th>
+        <th>User Address</th>
+        <th>User Id </th>
+        <th>Excel upload </th>
+
+        
+    </tr>
+    <tr *ngFor="let stu of allApproveData; index as i">
+        <td>{{i+1}}</td>
+        
+        <td>{{stu.bankId}}</td>
+        <td>{{stu.branch}}</td>
+        <td>{{stu.createdDate}}</td>
+        <td>{{stu.designation}}</td>
+        <td>{{stu.email}}</td>
+        <td>{{stu.ifscCode}}</td>
+        <td>{{stu.mobileNo}}</td>
+        <td>{{stu.password}}</td>
+        <td>{{stu.status}}</td>
+        <td>{{stu.userAddress}}</td>
+        <td>{{stu.userID}}</td>
+        <td>{{stu.excelUpload}}</td>
+  
+        
+    </tr>
+</table> 
+
+
+<button mat-button color="primary" (click)="getAllPendingData()">All Pending Data</button>
+
+<table class="table table-warning table-striped-columns">
+    <tr *ngIf="allPendingData !=null">
+        <th>Index No</th>
+        <th>bankId No</th>
+        <th>Branch</th>
+        <th>Created Date</th>
+        <th>Designation</th>
+        <th>Email Id</th>
+        <th>IFSC Code</th>
+        <th>Mobile No</th>
+        <th>Password </th>
+        <th>Status</th>
+        <th>User Address</th>
+        <th>User Id </th>
+        <th>Excel upload </th>
+        <th>Edit-status</th>
+        
+    </tr>
+    <tr *ngFor="let stu of allPendingData; index as i">
+        <td>{{i+1}}</td>
+
+        <td>{{stu.bankId}}</td>
+        <td>{{stu.branch}}</td>
+        <td>{{stu.createdDate}}</td>
+        <td>{{stu.designation}}</td>
+        <td>{{stu.email}}</td>
+        <td>{{stu.ifscCode}}</td>
+        <td>{{stu.mobileNo}}</td>
+        <td>{{stu.password}}</td>
+        <td>{{stu.status}}</td>
+        <td>{{stu.userAddress}}</td>
+        <td>{{stu.userID}}</td>
+        <td>{{stu.excelUpload}}</td>
+        <td><button mat-button color="primary" (click)="getAprovedData(stu.userID)">Approve</button></td>
+        <td><button mat-button color="primary" (click)="getRejectData(stu.userID)">Reject</button></td>
+        
+    </tr>
+</table>  

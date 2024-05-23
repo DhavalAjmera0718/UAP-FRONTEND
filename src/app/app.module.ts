@@ -23,12 +23,15 @@ import {MatIconModule} from '@angular/material/icon';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
 import { RegisterfirstComponent } from './Component/registerfirst/registerfirst.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    RegisterfirstComponent
+    RegisterfirstComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
