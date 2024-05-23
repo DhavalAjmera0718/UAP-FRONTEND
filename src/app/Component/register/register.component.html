@@ -1,0 +1,73 @@
+
+<div class="container">
+    <form [formGroup]="registerUser"  class="mat-typography" style="color: black;">
+    
+    <h1>Registration Form</h1>
+    <hr>
+    
+        <mat-form-field appearance="fill" >
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Enter email">
+         </mat-form-field>
+      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobileNo" placeholder="Enter mobile number">
+     
+        </mat-form-field>
+      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter password">
+         </mat-form-field>
+      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>User Address</mat-label>
+          <textarea matInput formControlName="userAddress" placeholder="Enter user address"></textarea>
+        </mat-form-field>
+    <br>
+        <mat-form-field appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="userName" placeholder="Enter user name">
+          </mat-form-field>
+        <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Bank ID</mat-label>
+            <input matInput formControlName="bankId" placeholder="Enter bank ID">
+           </mat-form-field>
+        <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Designation</mat-label>
+            <input matInput formControlName="designation" placeholder="Enter designation">
+    
+          </mat-form-field>
+       <br> 
+          <mat-form-field appearance="fill">
+            <mat-label>Branch</mat-label>
+            <input matInput formControlName="branch" placeholder="Enter branch">
+          </mat-form-field>
+        <br>
+          <mat-form-field appearance="fill">
+            <mat-label>IFSC Code</mat-label>
+            <input matInput formControlName="ifscCode" placeholder="Enter IFSC code">
+          </mat-form-field>
+    <br>
+         
+            <mat-label id ="file">Upload Excel File</mat-label> <hr>
+            <input type="file"  formControlName="excelUpload" (change)="onFileSelected($event)">
+            <!-- <button mat-raised-button color="primary" (click)="fileInput.click()">Browse</button> -->
+            <!-- <mat-icon>cloud_upload</mat-icon> -->
+            <!-- <span>{{ excelFileName }}</span> -->
+         
+        
+          <!-- Drag and drop area -->
+          <div class="drag-drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+            <p>Drag & Drop Excel File Here</p>
+          </div>
+        <br>
+    
+      <div  class="text-center">
+        <button mat-raised-button color="primary" (click)="savdata()" type="submit">Submit</button>
+      </div>
+      </form>
+    </div>  

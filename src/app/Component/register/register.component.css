@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+  }
+  form
+  {
+    width:  100vh;
+    border: 1px solid;
+    padding: 20px;
+    background-color: rgba(255, 254, 254, 0.603);
+  }
+h1
+{
+  text-align: center;
+  font-size: xx-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+  mat-form-field
+  {
+    /* background-color: red; */
+    width: 100%;
+  }
+
+  .mat-form-field {
+    max-width: 400px; /* Adjust maximum width as needed */
+    margin-bottom: 20px; /* Add margin between form fields */
+    width: 100%;
+  }
+  
+  .drag-drop-area {
+    border: 2px dashed #000000;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .drag-drop-area p {
+    margin: 0;
+  }
+  #file
+  {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
