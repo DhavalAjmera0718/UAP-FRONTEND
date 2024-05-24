@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
- 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { FileUploadComponent } from './file-upload/file-upload.component';
@@ -28,6 +27,9 @@ import { RegisterfirstComponent } from './Component/registerfirst/registerfirst.
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { HomeComponent } from './Component/home/home.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { HomeComponent } from './Component/home/home.component';
     RegisterfirstComponent,
     DashboardComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,14 @@ import { HomeComponent } from './Component/home/home.component';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule
- 
+    ,BrowserAnimationsModule,
+     FormsModule, 
+     ReactiveFormsModule,
+     MatInputModule,
+     MatFormFieldModule,
+     HttpClientModule
+    ,MatCardModule,MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

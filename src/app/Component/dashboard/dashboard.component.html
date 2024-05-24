@@ -1,7 +1,9 @@
+
+
 <button mat-button color="primary" (click)="getAllApprovedata()"> All Approve Data</button>
 
 <!-- <p><a lass="link-warning" (click)="getAllApprovedata()">Get All Approve Data</a></p> -->
-
+<div id="pdfContent">
 <table class="table table-warning table-striped-columns">
     <tr *ngIf="allApproveData !=null">
         <th>Index No</th>
@@ -39,7 +41,7 @@
         
     </tr>
 </table> 
-
+</div>
 
 <button mat-button color="primary" (click)="getAllPendingData()">All Pending Data</button>
 
@@ -58,8 +60,7 @@
         <th>User Address</th>
         <th>User Id </th>
         <th>Excel upload </th>
-        <th>Approve Status</th>
-        <th>Reject Status</th>
+        <th>Edit-status</th>
         
     </tr>
     <tr *ngFor="let stu of allPendingData; index as i">
@@ -82,3 +83,14 @@
         
     </tr>
 </table>  
+
+<!-- <div id="pdfContent">
+        <h1>Jayesh </h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, dignissimos voluptas vitae non incidunt doloribus accusantium error suscipit. Maiores, cumque dolore. Tempore amet autem exercitationem ex sit odit fugit delectus.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eaque a pariatur repellat reprehenderit neque, consectetur veniam aut nihil. A repudiandae illo cum velit recusandae fuga, blanditiis ea voluptatem alias quidem ab consequatur, quaerat quibusdam nihil facere neque nesciunt quia ipsam, dolorum nisi ducimus qui nemo ipsa? Facere itaque amet consequatur, debitis minus aliquam deserunt iure natus nostrum numquam temporibus repellat voluptas necessitatibus asperiores atque, dolore vero eveniet officia? Vitae eos aperiam excepturi provident vel perferendis animi quo non officia distinctio dolorum enim nam, repudiandae quos unde dicta aspernatur reiciendis quibusdam iusto magni possimus quidem aliquid. Totam perferendis laboriosam deserunt.</p> -->
+
+
+
+
+
+<button mat-button color="primary" (click)="generatePdf()">generatePdf</button>
