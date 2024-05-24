@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RouteReuseStrategy, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { UapService } from 'src/app/Service/uap.service';
 
 @Component({
@@ -11,22 +12,22 @@ import { UapService } from 'src/app/Service/uap.service';
 export class LoginComponent {
   loginAdmin: any;
 
-  constructor(private formbuilder: FormBuilder, private uapservice: UapService, private router: Router) {
+  constructor(private formbuilder: FormBuilder, private uapservice: UapService, private router: Router,private cookie :CookieService) {
     this.loginAdmin = this.formbuilder.group({
-      userEmail: ['', Validators.required],
-      userPass: ['', Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
   mybutton() {
-    this.uapservice.PreRegister(this.loginAdmin.value).subscribe({
-      next: (resp) => {
-        this.loginAdmin = resp
+    this.uapservice.loginAdmin(this.loginAdmin.value).subscribe({
+      next: (resp:any ) => {
+       this.cookie.set('Token',resp.jwtToken)
       },
-      error: (err) => { console.log(err) },
+      error: (err: any) => { console.log(err) },
       complete: () => {
-        alert("Save Successfully..");
-        this.router.navigateByUrl('');
+        alert("login Successfully..");
+        this.router.navigateByUrl('/dashborad');
       }
 
     })

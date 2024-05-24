@@ -18,6 +18,10 @@ return this.http.post("http://localhost:8095/postalldata",formdata,{responseType
     return this.http.post("http://localhost:8095/auth/registeradmin",data,{responseType:'text'})
   }
 
+  loginAdmin(logindata :any){
+    return this.http.post("http://localhost:8095/auth/login",logindata)
+  }
+
   approveData(id:any){
     return this.http.post("http://localhost:8095/approvedById/"+id ,{responseType:'json'});
   }
