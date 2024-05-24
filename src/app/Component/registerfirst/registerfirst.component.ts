@@ -15,7 +15,9 @@ export class RegisterfirstComponent {
   constructor(private formbuilder: FormBuilder, private uapservice: UapService, private router: Router) {
     this.registerFirstAdminForm = this.formbuilder.group({
       userEmail: ['', Validators.required],
-      userPass: ['', Validators.required]
+      userPass: ['', Validators.required],
+      userMobile:['',Validators.required],
+      userBirthDate:['',Validators.required]
     })
   }
 

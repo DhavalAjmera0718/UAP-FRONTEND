@@ -18,6 +18,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 // import { ExcelHandlingComponent } from './excel-handling/excel-handling.component';
 import {MatIconModule} from '@angular/material/icon';
 import { RegisterComponent } from './Component/register/register.component';
@@ -50,7 +52,9 @@ import { HomeComponent } from './Component/home/home.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule
  
   ],
   providers: [],

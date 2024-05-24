@@ -15,6 +15,24 @@
          </mat-form-field>
       <br>
 
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="userMobile" placeholder="Enter mobile number">
+   
+      </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <mat-label>Birth-Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="userBirthDate">
+      <mat-hint>MM-DD-YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+  <br>
+
       <div  class="text-center">
         <button mat-raised-button color="primary" (click)="mybutton()" type="submit">Submit</button>
       </div>
