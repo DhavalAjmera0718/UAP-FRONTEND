@@ -33,6 +33,7 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
