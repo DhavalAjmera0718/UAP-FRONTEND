@@ -18,25 +18,26 @@ export class DashboardComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
 
 
-  constructor(private service:UapService, private fb:FormBuilder){
+  approvedById_data:any;
 
+  constructor(private service:UapService, private fb:FormBuilder){
+  
   }
+
   ngOnInit(): void {
     this.dataSource.data = this.allApproveData;
   }
 
+/****************************************approved By Id************************************** */
+
+
+
   getAprovedData(id:any){
-    this.service.approveData(id).subscribe({
 
-
-      next(value) {
-        console.log(value);
-
-        alert(id + " will be Approved..");
-      },
-      error(err) {
-        console.log(err);
-      },
+    this.service.approveData(id).subscribe((resp)=>{
+      this.approvedById_data = resp;
+      console.log("approveById ", id , this.approvedById_data);
+      
     })
   }
 
@@ -54,7 +55,6 @@ export class DashboardComponent implements OnInit {
       this.allPendingData = resp;
       console.log(this.allPendingData);
       alert("All pending Data ...");
-      
     })
   }
 
@@ -63,8 +63,6 @@ export class DashboardComponent implements OnInit {
   
   getRejectData(id:any){
     this.service.rejectDadta(id).subscribe({
-
-
       next(value) {
         alert(id + " will be rejected!..");
         console.log(value);
@@ -75,6 +73,7 @@ export class DashboardComponent implements OnInit {
       },
     })
   }
+
   generatePdf(){
     const pdfElement:any = document.getElementById('pdfContent');
  
@@ -85,11 +84,35 @@ export class DashboardComponent implements OnInit {
      const imgData = canva.toDataURL('image/png');
      const imgHeight  = (canva.height*imgWidth) / canva.width;
  
-     // Add image to PDF
+ 
+
+     const title = 'Approved  Data ';
+
+     const titleWidth = pdf.getTextWidth(title);
+
+
+    const x = (pdf.internal.pageSize.getWidth() - titleWidth) / 2;
+
+    const textColor = 'blue'; 
+
+    pdf.setTextColor(textColor);
+
+     pdf.text(title, x, 6);
+
      pdf.addImage(imgData, 'PNG', 10, 10, imgWidth,imgHeight);
-     pdf.save("myPdf.pdf");
+
+     pdf.setFontSize(22); 
+    
+
+     const fileName = `${this.approvedById_data.userID}.pdf`; 
+    
+     
+     pdf.save(fileName);
     })
    }
+
+
+
 
 
 

@@ -1,180 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-</head>
-<body>
-
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Image container -->
-            <div class="col-12 col-md-4 image-container"></div>
-            
-            <!-- Main content container -->
-            <div class="col-12 col-md-8 main-content">
-                <div class="container">
-                    <div class="row" id="dataLink">
-                        <div class="col">
-                            <a class="custom-link" id="linkdata" (click)="getAllPendingData()">Pending Users</a>
-                        </div>
-                        <div class="col">
-                            <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Approved Users</a>
-                        </div>
-                        <div class="col">
-                            <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Rejected Users</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- PDF content -->
-                <div id="pdfContent">
-                    <ng-container *ngIf="allApproveData != null">
-                        <table mat-table [dataSource]="allApproveData" class="mat-elevation-z8">
-                      
-                          <!-- Index Column -->
-                          <ng-container matColumnDef="index">
-                            <th mat-header-cell *matHeaderCellDef> Index No </th>
-                            <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
-                          </ng-container>
-                      
-                          <!-- Bank ID Column -->
-                          <ng-container matColumnDef="bankId">
-                            <th mat-header-cell *matHeaderCellDef> Bank ID No </th>
-                            <td mat-cell *matCellDef="let element"> {{element.bankId}} </td>
-                          </ng-container>
-                      
-                          <!-- Branch Column -->
-                          <ng-container matColumnDef="branch">
-                            <th mat-header-cell *matHeaderCellDef> Branch </th>
-                            <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
-                          </ng-container>
-                      
-                          <!-- Created Date Column -->
-                          <ng-container matColumnDef="createdDate">
-                            <th mat-header-cell *matHeaderCellDef> Created Date </th>
-                            <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
-                          </ng-container>
-                      
-                          <!-- Designation Column -->
-                          <ng-container matColumnDef="designation">
-                            <th mat-header-cell *matHeaderCellDef> Designation </th>
-                            <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
-                          </ng-container>
-                      
-                          <!-- Email Column -->
-                          <ng-container matColumnDef="email">
-                            <th mat-header-cell *matHeaderCellDef> Email ID </th>
-                            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-                          </ng-container>
-                      
-                          <!-- IFSC Code Column -->
-                          <ng-container matColumnDef="ifscCode">
-                            <th mat-header-cell *matHeaderCellDef> IFSC Code </th>
-                            <td mat-cell *matCellDef="let element"> {{element.ifscCode}} </td>
-                          </ng-container>
-                      
-                          <!-- Mobile No Column -->
-                          <ng-container matColumnDef="mobileNo">
-                            <th mat-header-cell *matHeaderCellDef> Mobile No </th>
-                            <td mat-cell *matCellDef="let element"> {{element.mobileNo}} </td>
-                          </ng-container>
-                      
-                          <!-- Password Column -->
-                          <ng-container matColumnDef="password">
-                            <th mat-header-cell *matHeaderCellDef> Password </th>
-                            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
-                          </ng-container>
-                      
-                          <!-- Status Column -->
-                          <ng-container matColumnDef="status">
-                            <th mat-header-cell *matHeaderCellDef> Status </th>
-                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-                          </ng-container>
-                      
-                          <!-- User Address Column -->
-                          <ng-container matColumnDef="userAddress">
-                            <th mat-header-cell *matHeaderCellDef> User Address </th>
-                            <td mat-cell *matCellDef="let element"> {{element.userAddress}} </td>
-                          </ng-container>
-                      
-                          <!-- User ID Column -->
-                          <ng-container matColumnDef="userID">
-                            <th mat-header-cell *matHeaderCellDef> User ID </th>
-                            <td mat-cell *matCellDef="let element"> {{element.userID}} </td>
-                          </ng-container>
-                      
-                          <!-- Excel Upload Column -->
-                          <ng-container matColumnDef="excelUpload">
-                            <th mat-header-cell *matHeaderCellDef> Excel Upload </th>
-                            <td mat-cell *matCellDef="let element"> {{element.excelUpload}} </td>
-                          </ng-container>
-                      
-                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                        </table>
-                      </ng-container>
-                      
-                    <table class="table table-warning table-striped-columns">
-                        <tr *ngIf="allPendingData !=null">
-                            <th>Index No</th>
-                            <th>bankId No</th>
-                            <th>Branch</th>
-                            <th>Created Date</th>
-                            <th>Designation</th>
-                            <th>Email Id</th>
-                            <th>IFSC Code</th>
-                            <th>Mobile No</th>
-                            <th>Password </th>
-                            <th>Status</th>
-                            <th>User Address</th>
-                            <th>User Id </th>
-                            <th>Excel upload </th>
-                            <th>Edit-status</th>
-                            
-                        </tr>
-                        <tr *ngFor="let stu of allPendingData; index as i">
-                            <td>{{i+1}}</td>
-                    
-                            <td>{{stu.bankId}}</td>
-                            <td>{{stu.branch}}</td>
-                            <td>{{stu.createdDate}}</td>
-                            <td>{{stu.designation}}</td>
-                            <td>{{stu.email}}</td>
-                            <td>{{stu.ifscCode}}</td>
-                            <td>{{stu.mobileNo}}</td>
-                            <td>{{stu.password}}</td>
-                            <td>{{stu.status}}</td>
-                            <td>{{stu.userAddress}}</td>
-                            <td>{{stu.userID}}</td>
-                            <td>{{stu.excelUpload}}</td>
-                            <td><button mat-button color="primary" (click)="getAprovedData(stu.userID)">Approve</button></td>
-                            <td><button mat-button color="primary" (click)="getRejectData(stu.userID)">Reject</button></td>
-                            
-                        </tr>
-                    </table>  
-                    
-                    <button mat-button color="primary" (click)="generatePdf()">Convert Approved Data Into Pdf</button>
-                </div>
-            </div>
-        </div>
-
-    <!-- Last Div -->
-    </div> 
-
-    
-    
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+<div class="container-fluid">
+  <div class="row">
+      <!-- Image container -->
+      <div class="col-12 col-md-4 image-container"></div>
+      
+      <!-- Main content container -->
+      <div class="col-12 col-md-8 main-content">
+          <div class="container">
+              <div class="row" id="dataLink">
+                  <div class="col">
+                      <a class="custom-link" id="linkdata" (click)="getAllPendingData()">Pending Users</a>
+                  </div>
+                  <div class="col">
+                      <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Approved Users</a>
+                  </div>
+                  <div class="col">
+                      <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Rejected Users</a>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <!-- PDF content -->
+          <div id="pdfContent">
+              <ng-container *ngIf="allApproveData != null">
+                  <table mat-table [dataSource]="allApproveData" class="mat-elevation-z8">
+                
+                    <!-- Index Column -->
+                    <ng-container matColumnDef="index">
+                      <th mat-header-cell *matHeaderCellDef> Index No </th>
+                      <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+                    </ng-container>
+                
+                    <!-- Bank ID Column -->
+                    <ng-container matColumnDef="bankId">
+                      <th mat-header-cell *matHeaderCellDef> Bank ID No </th>
+                      <td mat-cell *matCellDef="let element"> {{element.bankId}} </td>
+                    </ng-container>
+                
+                    <!-- Branch Column -->
+                    <ng-container matColumnDef="branch">
+                      <th mat-header-cell *matHeaderCellDef> Branch </th>
+                      <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+                    </ng-container>
+                
+                    <!-- Created Date Column -->
+                    <ng-container matColumnDef="createdDate">
+                      <th mat-header-cell *matHeaderCellDef> Created Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+                    </ng-container>
+                
+                    <!-- Designation Column -->
+                    <ng-container matColumnDef="designation">
+                      <th mat-header-cell *matHeaderCellDef> Designation </th>
+                      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+                    </ng-container>
+                
+                    <!-- Email Column -->
+                    <ng-container matColumnDef="email">
+                      <th mat-header-cell *matHeaderCellDef> Email ID </th>
+                      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+                
+                    <!-- IFSC Code Column -->
+                    <ng-container matColumnDef="ifscCode">
+                      <th mat-header-cell *matHeaderCellDef> IFSC Code </th>
+                      <td mat-cell *matCellDef="let element"> {{element.ifscCode}} </td>
+                    </ng-container>
+                
+                    <!-- Mobile No Column -->
+                    <ng-container matColumnDef="mobileNo">
+                      <th mat-header-cell *matHeaderCellDef> Mobile No </th>
+                      <td mat-cell *matCellDef="let element"> {{element.mobileNo}} </td>
+                    </ng-container>
+                
+                    <!-- Password Column -->
+                    <ng-container matColumnDef="password">
+                      <th mat-header-cell *matHeaderCellDef> Password </th>
+                      <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+                    </ng-container>
+                
+                    <!-- Status Column -->
+                    <ng-container matColumnDef="status">
+                      <th mat-header-cell *matHeaderCellDef> Status </th>
+                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+                
+                    <!-- User Address Column -->
+                    <ng-container matColumnDef="userAddress">
+                      <th mat-header-cell *matHeaderCellDef> User Address </th>
+                      <td mat-cell *matCellDef="let element"> {{element.userAddress}} </td>
+                    </ng-container>
+                
+                    <!-- User ID Column -->
+                    <ng-container matColumnDef="userID">
+                      <th mat-header-cell *matHeaderCellDef> User ID </th>
+                      <td mat-cell *matCellDef="let element"> {{element.userID}} </td>
+                    </ng-container>
+                
+                    <!-- Excel Upload Column -->
+                    <ng-container matColumnDef="excelUpload">
+                      <th mat-header-cell *matHeaderCellDef> Excel Upload </th>
+                      <td mat-cell *matCellDef="let element"> {{element.excelUpload}} </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+                </ng-container>
+
+<table class="table table-warning table-striped-columns">
+    <tr *ngIf="allPendingData !=null">
+        <th>Index No</th>
+        <th>bankId No</th>
+        <th>Branch</th>
+        <th>Created Date</th>
+        <th>Designation</th>
+        <th>Email Id</th>
+        <th>IFSC Code</th>
+        <th>Mobile No</th>
+        <th>Password </th>
+        <th>Status</th>
+        <th>User Address</th>
+        <th>User Id </th>
+        <th>Excel upload </th>
+        <th>Edit-status</th>
+        
+    </tr>
+    <tr *ngFor="let stu of allPendingData; index as i">
+        <td>{{i+1}}</td>
+
+        <td>{{stu.bankId}}</td>
+        <td>{{stu.branch}}</td>
+        <td>{{stu.createdDate}}</td>
+        <td>{{stu.designation}}</td>
+        <td>{{stu.email}}</td>
+        <td>{{stu.ifscCode}}</td>
+        <td>{{stu.mobileNo}}</td>
+        <td>{{stu.password}}</td>
+        <td>{{stu.status}}</td>
+        <td>{{stu.userAddress}}</td>
+        <td>{{stu.userID}}</td>
+        <td>{{stu.excelUpload}}</td>
+        <td><button mat-button color="primary" (click)="getAprovedData(stu.userID)">Approve</button></td>
+        <td><button mat-button color="primary" (click)="getRejectData(stu.userID)">Reject</button></td>
+        
+    </tr>
+</table>  
+
+<!-- <div id="pdfContent">
+        <h1>Jayesh </h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, dignissimos voluptas vitae non incidunt doloribus accusantium error suscipit. Maiores, cumque dolore. Tempore amet autem exercitationem ex sit odit fugit delectus.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eaque a pariatur repellat reprehenderit neque, consectetur veniam aut nihil. A repudiandae illo cum velit recusandae fuga, blanditiis ea voluptatem alias quidem ab consequatur, quaerat quibusdam nihil facere neque nesciunt quia ipsam, dolorum nisi ducimus qui nemo ipsa? Facere itaque amet consequatur, debitis minus aliquam deserunt iure natus nostrum numquam temporibus repellat voluptas necessitatibus asperiores atque, dolore vero eveniet officia? Vitae eos aperiam excepturi provident vel perferendis animi quo non officia distinctio dolorum enim nam, repudiandae quos unde dicta aspernatur reiciendis quibusdam iusto magni possimus quidem aliquid. Totam perferendis laboriosam deserunt.</p> -->
 
 
 
 
+
+<button mat-button color="primary" (click)="generatePdf()">generatePdf</button>
