@@ -30,6 +30,7 @@ import { HomeComponent } from './Component/home/home.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

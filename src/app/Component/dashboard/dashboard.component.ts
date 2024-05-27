@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { UapService } from 'src/app/Service/uap.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   allPendingData:any;
   allApproveData:any;
+  displayedColumns: string[] = ['index', 'bankId', 'branch', 'createdDate', 'designation', 'email', 'ifscCode', 'mobileNo', 'password', 'status', 'userAddress', 'userID', 'excelUpload'];
+  dataSource = new MatTableDataSource<any>();
+
 
   constructor(private service:UapService, private fb:FormBuilder){
 
+  }
+  ngOnInit(): void {
+    this.dataSource.data = this.allApproveData;
   }
 
   getAprovedData(id:any){
