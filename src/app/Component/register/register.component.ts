@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UapService } from 'src/app/Service/uap.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   file: File | null = null;
   excelFileName: any;
 
-  constructor(private uapservice: UapService, private fb: FormBuilder) {
+  constructor(private uapservice: UapService, private fb: FormBuilder, private router: Router) {
     this.registerUser = this.fb.group({
       email: ['', [Validators.required, Validators.email]], // Validating email format
       mobileNo: ['', [Validators.required]], // Validating 10 digit mobile number , Validators.pattern(/^\d{10}$/)]
@@ -34,41 +35,46 @@ export class RegisterComponent implements OnInit {
   }
 
   savdata() {
-
+    // this.registerUser.get("excelUpload").value
     let registretionData = this.registerUser.value;
     const formdata = new FormData();
-    formdata.append("file", this.registerUser.get("excelUpload").value)
+    formdata.append("file",this.userFile);
     formdata.append("name", JSON.stringify(registretionData))
     console.log("Form data ", formdata)
 
 
     this.uapservice.PostFile(formdata).subscribe({
       next: (resp) => {
-        alert("DATA HASE BEEN SAVED")
+
         console.log("Response" + resp)
       },
       error: (err) => {
         console.log(err)
+      },
+      complete:()=>{
+        alert("DATA HASE BEEN SAVED");
+        this.router.navigateByUrl('/dashboard')
       }
     })
   }
+  userFile:any;
 
   onFileSelected(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
+      this.userFile = file;
       //this.excelFileName = this.file?.name;
-      this.registerUser.get("excelUpload").setValue(file);
+      // this.registerUser.get("excelUpload").setValue(file);
     }
   }
   onDragOver(event: DragEvent): void {
     event.preventDefault();
   }
-  
+
   // Method to handle file drop event
   onDrop(event: DragEvent): void {
     event.preventDefault();
-    if(event.dataTransfer)
-    {
+    if (event.dataTransfer) {
       const file = event.dataTransfer.files[0];
       if (file) {
         this.excelFileName = file.name;
@@ -76,7 +82,7 @@ export class RegisterComponent implements OnInit {
           excelUpload: file
         });
       }
-  
+
     }
   }
 

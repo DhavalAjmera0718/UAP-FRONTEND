@@ -27,7 +27,7 @@ export class LoginComponent {
       error: (err: any) => { console.log(err) },
       complete: () => {
         alert("login Successfully..");
-        this.router.navigateByUrl('/dashborad');
+        this.router.navigateByUrl('/home');
       }
 
     })
