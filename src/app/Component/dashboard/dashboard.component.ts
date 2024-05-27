@@ -72,7 +72,9 @@ export class DashboardComponent {
      const pdf  = new jsPDF('p', 'mm', 'a4');
  
      const imgWidth  = 190;
+
      const imgData = canva.toDataURL('image/png');
+     
      const imgHeight  = (canva.height*imgWidth) / canva.width;
  
  
