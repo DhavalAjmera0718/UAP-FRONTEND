@@ -1,46 +1,40 @@
 
 
-<button mat-button color="primary" (click)="getAllApprovedata()"> All Approve Data</button>
-
-<!-- <p><a lass="link-warning" (click)="getAllApprovedata()">Get All Approve Data</a></p> -->
 <div id="pdfContent">
-<table class="table table-warning table-striped-columns">
-    <tr *ngIf="allApproveData !=null">
-        <th>Index No</th>
-        <th>bankId No</th>
-        <th>Branch</th>
-        <th>Created Date</th>
-        <th>Designation</th>
-        <th>Email Id</th>
-        <th>IFSC Code</th>
-        <th>Mobile No</th>
-        <th>Password </th>
-        <th>Status</th>
-        <th>User Address</th>
-        <th>User Id </th>
-        <th>Excel upload </th>
-
+        <table *ngIf="approvedById_data !=null" class="table table-warning table-striped-columns">
+            <tr>
+                <th>Index No</th>
+                <th>bankId No</th>
+                <th>Branch</th>
+                <th>Created Date</th>
+                <th>Designation</th>
+                <th>Email Id</th>
+                <th>IFSC Code</th>
+                <th>Mobile No</th>
+                <th>Password </th>
+                <th>Status</th>
+                <th>User Address</th>
+                <th>User Id </th>
+                <th>Excel upload </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>{{approvedById_data.bankId}}</td>
+                <td>{{approvedById_data.branch}}</td>
+                <td>{{approvedById_data.createdDate}}</td>
+                <td>{{approvedById_data.designation}}</td>
+                <td>{{approvedById_data.email}}</td>
+                <td>{{approvedById_data.ifscCode}}</td>
+                <td>{{approvedById_data.mobileNo}}</td>
+                <td>{{approvedById_data.password}}</td>
+                <td>{{approvedById_data.status}}</td>
+                <td>{{approvedById_data.userAddress}}</td>
+                <td>{{approvedById_data.userID}}</td>
+                <td>{{approvedById_data.excelUpload}}</td>
         
-    </tr>
-    <tr *ngFor="let stu of allApproveData; index as i">
-        <td>{{i+1}}</td>
-        
-        <td>{{stu.bankId}}</td>
-        <td>{{stu.branch}}</td>
-        <td>{{stu.createdDate}}</td>
-        <td>{{stu.designation}}</td>
-        <td>{{stu.email}}</td>
-        <td>{{stu.ifscCode}}</td>
-        <td>{{stu.mobileNo}}</td>
-        <td>{{stu.password}}</td>
-        <td>{{stu.status}}</td>
-        <td>{{stu.userAddress}}</td>
-        <td>{{stu.userID}}</td>
-        <td>{{stu.excelUpload}}</td>
-  
-        
-    </tr>
-</table> 
+                
+            </tr>
+        </table> 
 </div>
 
 <button mat-button color="primary" (click)="getAllPendingData()">All Pending Data</button>
@@ -83,13 +77,6 @@
         
     </tr>
 </table>  
-
-<!-- <div id="pdfContent">
-        <h1>Jayesh </h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, dignissimos voluptas vitae non incidunt doloribus accusantium error suscipit. Maiores, cumque dolore. Tempore amet autem exercitationem ex sit odit fugit delectus.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eaque a pariatur repellat reprehenderit neque, consectetur veniam aut nihil. A repudiandae illo cum velit recusandae fuga, blanditiis ea voluptatem alias quidem ab consequatur, quaerat quibusdam nihil facere neque nesciunt quia ipsam, dolorum nisi ducimus qui nemo ipsa? Facere itaque amet consequatur, debitis minus aliquam deserunt iure natus nostrum numquam temporibus repellat voluptas necessitatibus asperiores atque, dolore vero eveniet officia? Vitae eos aperiam excepturi provident vel perferendis animi quo non officia distinctio dolorum enim nam, repudiandae quos unde dicta aspernatur reiciendis quibusdam iusto magni possimus quidem aliquid. Totam perferendis laboriosam deserunt.</p> -->
-
-
 
 
 
