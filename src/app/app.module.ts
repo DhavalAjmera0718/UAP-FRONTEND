@@ -26,6 +26,9 @@ import { LoginComponent } from './Component/login/login.component';
 import { RegisterfirstComponent } from './Component/registerfirst/registerfirst.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { HomeComponent } from './Component/home/home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { NavbarComponent } from './Component/navbar/navbar.component';
 
 
 
@@ -37,7 +40,8 @@ import { HomeComponent } from './Component/home/home.component';
     LoginComponent,
     RegisterfirstComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
 
   ],
   imports: [
@@ -64,7 +68,9 @@ import { HomeComponent } from './Component/home/home.component';
      MatInputModule,
      MatFormFieldModule,
      HttpClientModule
-    ,MatCardModule,MatButtonModule
+    ,MatCardModule,MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule
 
   ],
   providers: [],

@@ -20,7 +20,7 @@ export class CustomInterceptor implements HttpInterceptor {
     }
 
     const cookie =this.cookie.get("Token");
-    request.clone({headers:request.headers.set('Authorization','Bearer ' + cookie)})
+    request = request.clone({headers : request.headers.set('Authorization','Bearer ' + cookie)})
     return next.handle(request);
   }
 }

@@ -1,4 +1,3 @@
-
 <div class="container">
     <form [formGroup]="registerUser"  class="mat-typography" style="color: black;">
     
@@ -22,12 +21,12 @@
          </mat-form-field>
       <br>
         <mat-form-field appearance="fill">
-          <mat-label>User+-Address</mat-label>
+          <mat-label>User Address</mat-label>
           <textarea matInput formControlName="userAddress" placeholder="Enter user address"></textarea>
         </mat-form-field>
     <br>
         <mat-form-field appearance="fill">
-            <mat-label>User--Name</mat-label>
+            <mat-label>User Name</mat-label>
             <input matInput formControlName="userName" placeholder="Enter user name">
           </mat-form-field>
         <br>
@@ -54,7 +53,7 @@
     <br>
          
             <mat-label id ="file">Upload Excel File</mat-label> <hr>
-            <input type="file"  formControlName="excelUpload" (change)="onFileSelected($event)">
+            <input type="file"  (change)="onFileSelected($event)">
             <!-- <button mat-raised-button color="primary" (click)="fileInput.click()">Browse</button> -->
             <!-- <mat-icon>cloud_upload</mat-icon> -->
             <!-- <span>{{ excelFileName }}</span> -->

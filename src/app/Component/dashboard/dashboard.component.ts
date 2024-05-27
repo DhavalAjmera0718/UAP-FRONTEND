@@ -13,23 +13,23 @@ export class DashboardComponent {
 
   allPendingData:any;
   allApproveData:any;
-
+  oneApprovedData : any;
   constructor(private service:UapService, private fb:FormBuilder){
 
   }
+  // next(value) {
+  //   console.log(value);
+
+  //   alert(id + " will be Approved..");
+  // },
+  // error(err) {
+  //   console.log(err);
+  // },
 
   getAprovedData(id:any){
-    this.service.approveData(id).subscribe({
-
-
-      next(value) {
-        console.log(value);
-
-        alert(id + " will be Approved..");
-      },
-      error(err) {
-        console.log(err);
-      },
+    this.service.approveData(id).subscribe((resp)=>{
+      this.oneApprovedData = resp;
+      alert(id +"id will Approved");
     })
   }
 
