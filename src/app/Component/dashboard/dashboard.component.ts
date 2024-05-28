@@ -29,14 +29,6 @@ export class DashboardComponent implements OnInit {
   constructor(private service:UapService, private fb:FormBuilder, private router:Router,private translate:TranslateService){
     this.translate.setDefaultLang('en');
   }
-  // next(value) {
-  //   console.log(value);
-
-  //   alert(id + " will be Approved..");
-  // },
-  // error(err) {
-  //   console.log(err);
-  // },
 
   ngOnInit(): void {
     this.dataSource.data = this.allApproveData;

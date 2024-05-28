@@ -1,97 +1,109 @@
 <!-- src/app/home/home.component.html -->
 <!-- <app-navbar></app-navbar> -->
-  <!-- <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+  <html lang="en" #content>
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>MSME / Udyam Registration</title>
   </head>
-  <body> -->
-    <style>
-      .box {
+
+  <body > 
+<style>
+  .box {
     border: 1px solid black;
     padding: 20px;
     margin-bottom: 20px;
   }
-  
+
   .row {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .col-12 {
     flex-basis: 100%;
   }
-  
+
   .col-md-2 {
     flex: 0 0 16.666667%;
     max-width: 16.666667%;
     padding: 0 15px;
   }
-  
+
   .info-box {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
   }
-  
+
   .info-box-content {
     text-align: center;
   }
-  
+
   .info-box-text {
     font-weight: bold;
   }
-  
+
   .info-box-number {
     font-size: 25px;
   }
+
   body {
     font-family: Arial, sans-serif;
     background-color: #191970;
     color: white;
     margin: 0;
     padding: 0;
-}
-.container {
+  }
+
+  .container {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-}
-header {
+  }
+
+  header {
     padding: 20px;
-}
-header img {
+  }
+
+  header img {
     width: 80px;
     vertical-align: middle;
-}
-header h1 {
+  }
+
+  header h1 {
     display: inline-block;
     margin-left: 10px;
     vertical-align: middle;
-}
-nav {
+  }
+
+  nav {
     text-align: right;
     margin: 20px 0;
-}
-nav a {
+  }
+
+  nav a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-}
-nav a:hover {
+  }
+
+  nav a:hover {
     text-decoration: underline;
-}
-.content {
+  }
+
+  .content {
     background-color: #1E90FF;
     padding: 20px;
     border-radius: 10px;
-}
-.content h2 {
+  }
+
+  .content h2 {
     margin-top: 0;
-}
-.button {
+  }
+
+  .button {
     display: block;
     width: 60%;
     margin: 10px auto;
@@ -100,188 +112,209 @@ nav a:hover {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-}
-.button:hover {
+  }
+
+  .button:hover {
     background-color: #00008B;
-}
-.steps {
+  }
+
+  .steps {
     margin-top: 30px;
     text-align: left;
-}
-.steps img {
+  }
+
+  .steps img {
     float: right;
     width: 200px;
-}
-.steps h3 {
+  }
+
+  .steps h3 {
     background-color: #FFA500;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
-}
-footer {
+  }
+
+  footer {
     margin-top: 30px;
     padding: 20px;
     background-color: #000080;
     border-radius: 10px;
-}
+  }
+</style>
+<app-navbar></app-navbar>
+<!-- src/app/Component/home/home.component.html -->
+<div>
+  <!-- Your existing HTML content -->
+  <h1>Welcome to Home Component</h1>
+  <p>This is the home component content that will be downloaded.</p>
+</div>
 
-  
-    </style>
-    <app-navbar></app-navbar>
-      <header>
-          <h1>Ministry of Micro, Small & Medium Enterprises</h1>
-      </header>
-    
-      <div class="container" style="border: 2px solid;">
-          <div class="content">
-              <h2>MSME / Udyam Registration Process</h2>
-              <p>Welcome to Register here</p>
-              <a href="#" class="button">For New Entrepreneurs who are not Registered yet as MSME or those with EM-II</a>
-              <a href="#" class="button">For those already having registration as UAM</a>
-              <a href="#" class="button">For those already having registration as UAM through Assisted filling</a>
-              <a href="#" class="button">For Informal Micro Enterprises</a>
-          </div>
-          <div class="steps">
-              <!-- <img src="https://udyamregistration.org.in/blog/wp-content/uploads/2023/04/Copy-of-Add-a-subheading-1024x576.jpg" alt="Steps"> -->
-              <h3>CHAMPIONS</h3>
-              <h3>MEDIUM</h3>
-              <h3>SMALL</h3>
-              <h3>MICRO</h3>
-          </div>
-      </div>
-      <footer>
-          <p>Factsheet of MSME (Udyam) Registration Including Udyam Assist Platform (UAP)</p>
-          <p>Facts Dated: 24/05/2024 03:00:02 PM</p>
-      </footer>
-  <!-- </body>
+<!-- Download button -->
+<button (click)="downloadHtml()">Download HTML</button>
+
+
+<header>
+  <h1>Ministry of Micro, Small & Medium Enterprises</h1>
+</header>
+
+<div class="container" style="border: 2px solid;">
+  <div class="content">
+    <h2>MSME / Udyam Registration Process</h2>
+    <p>Welcome to Register here</p>
+    <a href="#" class="button">For New Entrepreneurs who are not Registered yet as MSME or those with EM-II</a>
+    <a href="#" class="button">For those already having registration as UAM</a>
+    <a href="#" class="button">For those already having registration as UAM through Assisted filling</a>
+    <a href="#" class="button">For Informal Micro Enterprises</a>
+  </div>
+  <div class="steps">
+    <!-- <img src="https://udyamregistration.org.in/blog/wp-content/uploads/2023/04/Copy-of-Add-a-subheading-1024x576.jpg" alt="Steps"> -->
+    <h3>CHAMPIONS</h3>
+    <h3>MEDIUM</h3>
+    <h3>SMALL</h3>
+    <h3>MICRO</h3>
+  </div>
+</div>
+<footer>
+  <p>Factsheet of MSME (Udyam) Registration Including Udyam Assist Platform (UAP)</p>
+  <p>Facts Dated: 24/05/2024 03:00:02 PM</p>
+</footer>
+<!-- </body>
   </html> -->
-  
 
-<h2 style="text-align: center;" >UDYAM REGISTRATION PORTAL</h2>
+
+<h2 style="text-align: center;">UDYAM REGISTRATION PORTAL</h2>
 <!-- <hr> -->
 <div class="box">
 
-                   <p> An enterprise shall be classified as a micro, small or medium
+  <p> An enterprise shall be classified as a micro, small or medium
     enterprise on the basis of the following criteria, namely: --</p>
-    <ul>
-                    <li>
-    (i) a micro enterprise, where the investment in plant
-    and machinery or equipment does not exceed one crore
-    rupees and turnover does not exceed five crore rupees;</li><li>
-    (ii) a small enterprise, where the investment in plant
-    and machinery or equipment does not exceed ten crore
-    rupees and turnover does not exceed fifty crore rupees; and </li>
-        <li>
-    (iii) a medium enterprise, where the investment in
-    plant and machinery or equipment does not exceed fifty
-    crore rupees and turnover does not exceed two hundred and
-    fifty crore rupees.</li>
+  <ul>
+    <li>
+      (i) a micro enterprise, where the investment in plant
+      and machinery or equipment does not exceed one crore
+      rupees and turnover does not exceed five crore rupees;</li>
+    <li>
+      (ii) a small enterprise, where the investment in plant
+      and machinery or equipment does not exceed ten crore
+      rupees and turnover does not exceed fifty crore rupees; and </li>
+    <li>
+      (iii) a medium enterprise, where the investment in
+      plant and machinery or equipment does not exceed fifty
+      crore rupees and turnover does not exceed two hundred and
+      fifty crore rupees.</li>
 
-    </ul>
-  <p>For the detailed legal framework  for classification of MSMEs and Procedure for their Registration 
-  
-   <a href="#" style="font-size:26px"> Click Here</a> </p>
- 
+  </ul>
+  <p>For the detailed legal framework for classification of MSMEs and Procedure for their Registration
+
+    <a href="#" style="font-size:26px"> Click Here</a>
+  </p>
+
 </div>
 
 
 
 <div class="row" style="padding-top:20px;">
-          
+
   <div class="col-12 col-sm-6 col-md-2">
- 
-  <div class="info-box">
+
+    <div class="info-box">
 
 
-   <div class="info-box-content" style="color:black">
-     <span class="info-box-text"><b>Total Registration</b></span>
-     <span class="info-box-number">              
-          <span id="ctl00_ContentPlaceHolder1_UUTor" style="font-size:25px; color:black">4,44,99,921</span> 
-     </span>
-   
-   </div>
-   <!-- /.info-box-content -->
- </div> 
- <!-- /.info-box -->
+      <div class="info-box-content" style="color:black">
+        <span class="info-box-text"><b>Total Registration</b></span>
+        <span class="info-box-number">
+          <span id="ctl00_ContentPlaceHolder1_UUTor" style="font-size:25px; color:black">4,44,99,921</span>
+        </span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-2">
+    <div class="info-box">
+
+
+      <div class="info-box-content">
+        <span class="info-box-text"><b>Total Classified</b></span>
+        <span class="info-box-number">
+
+          <span id="ctl00_ContentPlaceHolder1_UUToc" style="font-size:25px;">4,44,40,257</span>
+        </span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-2">
+    <div class="info-box mb-3">
+
+
+      <div class="info-box-content">
+        <span class="info-box-text"><b>Micro</b></span>
+        <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTom"
+            style="font-size:23px;">4,36,69,982</span></span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- fix for small devices only -->
+  <div class="clearfix hidden-md-up"></div>
+
+  <div class="col-12 col-sm-6 col-md-2">
+    <div class="info-box mb-3">
+
+
+      <div class="info-box-content">
+        <span class="info-box-text"><b>Small</b></span>
+        <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTos"
+            style="font-size:25px;">7,03,117</span></span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-2">
+    <div class="info-box mb-3">
+
+
+      <div class="info-box-content">
+        <span class="info-box-text"><b>Medium</b></span>
+        <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTome"
+            style="font-size:25px;">67,158</span></span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-2">
+    <div class="info-box mb-3">
+
+
+      <div class="info-box-content">
+        <span class="info-box-text"><b>Total Employment</b></span>
+        <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTEmp"
+            style="font-size:25px;">19,31,44,348</span></span>
+
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <!-- /.col -->
 </div>
-
-<div class="col-12 col-sm-6 col-md-2">
- <div class="info-box">
-  
-
-   <div class="info-box-content">
-     <span class="info-box-text"><b>Total Classified</b></span>
-     <span class="info-box-number">
-      
-             <span id="ctl00_ContentPlaceHolder1_UUToc" style="font-size:25px;">4,44,40,257</span>                               
-     </span>
-   
-   </div>
-   <!-- /.info-box-content -->
- </div>
- <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<div class="col-12 col-sm-6 col-md-2">
- <div class="info-box mb-3">
- 
-
-   <div class="info-box-content">
-     <span class="info-box-text"><b>Micro</b></span>
-     <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTom" style="font-size:23px;">4,36,69,982</span></span>
-      
-   </div>
-   <!-- /.info-box-content -->
- </div>
- <!-- /.info-box -->
-</div>
-<!-- /.col -->
-
-<!-- fix for small devices only -->
-<div class="clearfix hidden-md-up"></div>
-
-<div class="col-12 col-sm-6 col-md-2">
- <div class="info-box mb-3">
-
-
-   <div class="info-box-content">
-     <span class="info-box-text"><b>Small</b></span>
-     <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTos" style="font-size:25px;">7,03,117</span></span>
-     
-   </div>
-   <!-- /.info-box-content -->
- </div>
- <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<div class="col-12 col-sm-6 col-md-2">
- <div class="info-box mb-3">
-
-
-   <div class="info-box-content">
-     <span class="info-box-text"><b>Medium</b></span>
-     <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTome" style="font-size:25px;">67,158</span></span>
-     
-   </div>
-   <!-- /.info-box-content -->
- </div>
- <!-- /.info-box -->
-</div>  
-<!-- /.col -->
-<div class="col-12 col-sm-6 col-md-2">
- <div class="info-box mb-3">
- 
-
-   <div class="info-box-content">
-     <span class="info-box-text"><b>Total Employment</b></span>
-     <span class="info-box-number"><span id="ctl00_ContentPlaceHolder1_UUTEmp" style="font-size:25px;">19,31,44,348</span></span>
-     
-   </div>
-   <!-- /.info-box-content -->
- </div>
- <!-- /.info-box -->
-</div>  
-
-<!-- /.col -->
-</div>
-  
+  </body>
+  </html>

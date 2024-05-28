@@ -64,10 +64,12 @@
       }
     </style>
   </head>
+
   <body>
     <button (click)="switchLanguage('en')">English</button>
 
     <button (click)="switchLanguage('gu')">Gujarati</button>
+  <body #content>
 
     <div class="container">
       <div class="header">
@@ -139,5 +141,6 @@
         </p>
       </div>
     </div>
+    <button class="btn btn-primary text-center" (click)="downloadHtml()"> Download</button>
   </body>
 </html>
