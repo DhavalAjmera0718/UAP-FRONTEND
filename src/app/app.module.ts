@@ -29,6 +29,7 @@ import { HomeComponent } from './Component/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavbarComponent } from './Component/navbar/navbar.component';
+import { UAPCertyComponent } from './Component/uapcerty/uapcerty.component';
 
 
 
@@ -42,7 +43,8 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
     RegisterfirstComponent,
     DashboardComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    UAPCertyComponent
 
   ],
   imports: [

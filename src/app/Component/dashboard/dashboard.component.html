@@ -11,7 +11,6 @@
                       <a class="custom-link" id="linkdata" (click)="getAllPendingData()">Pending Users</a>
                   </div>
 
-
                   <div class="col">
                       <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Approved  Users</a>
                   </div>
@@ -20,11 +19,14 @@
                       <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Rejected Users</a>
                   </div>
 
+                  <div class="col">
+                    <a class="custom-link" id="linkdata" (click)="generatePdf()">Generate  PDF</a>
+                </div>
+
               </div>
           </div>
           <hr>
     
-   
               <ng-container *ngIf="allApproveData != null">
                   <table mat-table [dataSource]="allApproveData" class="mat-elevation-z8">
                 

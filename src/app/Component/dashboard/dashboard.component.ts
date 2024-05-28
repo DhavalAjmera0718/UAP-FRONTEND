@@ -4,6 +4,7 @@ import { UapService } from 'src/app/Service/uap.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { MatTableDataSource } from '@angular/material/table';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +25,7 @@ export class DashboardComponent implements OnInit {
   approvedById_data:any;
 
 
-  constructor(private service:UapService, private fb:FormBuilder){
+  constructor(private service:UapService, private fb:FormBuilder, private router:Router){
   
   }
   // next(value) {
@@ -43,14 +44,15 @@ export class DashboardComponent implements OnInit {
 /****************************************approved By Id************************************** */
 
 
-
   getAprovedData(id:any){
 
   this.service.approveData(id).subscribe({
     next: (resp)=>{
-      alert( "Id number "+ id + " has Been Approved")
-      window.location.reload()
-      console.log(resp)
+      alert( "Id number "+ id + " has Been Approved");
+      // window.location.reload();
+      this.router.navigate(["/uapcerty",id]);
+      console.log("path...");
+      
     }
   })
 }
