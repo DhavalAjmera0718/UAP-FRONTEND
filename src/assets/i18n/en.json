@@ -1,0 +1,34 @@
+
+{
+    "uapcerty": {
+    "Government of India":"Government of India",
+      "Ministry of Micro, Small and Medium Enterprises": "Ministry of Micro, Small and Medium Enterprises",
+      "UDYAM REGISTRATION CERTIFICATE": "UDYAM REGISTRATION CERTIFICATE",
+      "section": {
+        "UDYAM REGISTRATION NUMBER": "CERTIFICATE NUMBER",
+        "opl":"Jayesh Darshan Dhaval",
+        "type":"MICRO (Based on FY 2020-21)",
+        "NAME OF ENTERPRISE": "NAME OF ENTERPRISE",
+        "TYPE OF ENTERPRISE": "TYPE OF ENTERPRISE",
+        "highlight": "TRADING (For availing benefits of Priority Sector Lending(PSL) ONLY)",
+        "MAJOR ACTIVITY:": "MAJOR ACTIVITY",
+        "TRADING": "TRADING",
+        "SOCIAL CATEGORY OF ENTREPRENEUR": "SOCIAL CATEGORY OF ENTREPRENEUR",
+        "OBC": "OBC",
+        "snum":"Serial NUMBER",
+        "unit": "Name",
+        "odf":"OFFICIAL Detais OF ENTERPRISE",
+        "address":"User Address",
+        "id":"Bank Id",
+        "key":"User Account key",
+        "status":"Application status",
+        "mail":"Email",
+        "num":"Mobile",
+        "branch":"Branch",
+        "code":"IFSC code",
+       "reg": "ATE OF INCORPORATION / REGISTRATION OF ENTERPRISE",
+       "note":"Note: This is a system generated certificate and does not require any signature"
+      }
+    }
+  }
+  

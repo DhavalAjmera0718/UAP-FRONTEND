@@ -4,7 +4,8 @@ import { UapService } from 'src/app/Service/uap.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { MatTableDataSource } from '@angular/material/table';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,8 +26,8 @@ export class DashboardComponent implements OnInit {
   approvedById_data:any;
 
 
-  constructor(private service:UapService, private fb:FormBuilder, private router:Router){
-  
+  constructor(private service:UapService, private fb:FormBuilder, private router:Router,private translate:TranslateService){
+    this.translate.setDefaultLang('en');
   }
   // next(value) {
   //   console.log(value);
@@ -48,7 +49,7 @@ export class DashboardComponent implements OnInit {
 
   this.service.approveData(id).subscribe({
     next: (resp)=>{
-      alert( "Id number "+ id + " has Been Approved");
+    //  alert( "Id number "+ id + " has Been Approved");
       // window.location.reload();
       this.router.navigate(["/uapcerty",id]);
       console.log("path...");
@@ -73,7 +74,12 @@ export class DashboardComponent implements OnInit {
       this.allPendingData = resp;
       console.log(this.allPendingData);
       alert("All pending Data ...");
+
+
     })
+
+
+    
   }
 
 
@@ -130,6 +136,15 @@ export class DashboardComponent implements OnInit {
      pdf.save(fileName);
     })
    }
+
+   switchLanguage(language: string) {
+    console.log(language);
+    this.translate.use(language);
+    console.log("2",this.translate.use(language));
+    
+    
+
+  }
 
 
 }

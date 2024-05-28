@@ -21,10 +21,10 @@ export class RegisterComponent implements OnInit {
   constructor(private uapservice: UapService, private fb: FormBuilder, private router: Router) {
     this.registerUser = this.fb.group({
       email: ['', [Validators.required, Validators.email]], // Validating email format
-      mobileNo: ['', [Validators.required]], // Validating 10 digit mobile number , Validators.pattern(/^\d{10}$/)]
-      password: ['', [Validators.required]], // Validating minimum password length
-      userAddress: ['', Validators.required], // Validating required user address
-      userName: ['', Validators.required], // Validating required username
+      mobileNo: ['', [Validators.required]], 
+      password: ['', [Validators.required]],
+      userAddress: ['', Validators.required], 
+      userName: ['', Validators.required], 
       bankId: ['', Validators.required], // Validating required bank ID
       designation: ['', Validators.required], // Validating required designation
       branch: ['', Validators.required], // Validating required branch

@@ -65,77 +65,77 @@
     </style>
   </head>
   <body>
+    <button (click)="switchLanguage('en')">English</button>
+
+    <button (click)="switchLanguage('gu')">Gujarati</button>
+
     <div class="container">
       <div class="header">
-       
-        <h1>भारत सरकार</h1>
-        <h2>Government of India</h2>
-        <h3>Ministry of Micro, Small and Medium Enterprises</h3>
-      </div>
-      <div class="main-title">UDYAM REGISTRATION CERTIFICATE</div>
+      <h2>{{'uapcerty.Government of India' | translate }}</h2>
+      <div class="main-title">{{ 'uapcerty.UDYAM REGISTRATION CERTIFICATE' | translate }}</div>
       <div class="section">
-        <h4>UDYAM REGISTRATION NUMBER: <span>UDYAM-TS-02-0080975</span></h4>
-        <h4>NAME OF ENTERPRISE: <span>Online psb loans pvt ltd</span></h4>
-        <h4>TYPE OF ENTERPRISE: <span>MICRO (Based on FY 2020-21)</span></h4>
+        <h4>{{ 'uapcerty.section.UDYAM REGISTRATION NUMBER' | translate }}: <span> {{certificateNumber}} </span></h4>
+        <h4>{{ 'uapcerty.section.NAME OF ENTERPRISE' | translate }}: <span>{{'uapcerty.section.opl' |  translate}}</span></h4>
+        <h4>{{ 'uapcerty.section.TYPE OF ENTERPRISE' | translate }}: <span>{{'uapcerty.section.type' | translate}}</span></h4>
         <div class="highlight">
-          TRADING <br />
-          (For availing benefits of Priority Sector Lending(PSL) ONLY)
+          {{ 'uapcerty.section.highlight' | translate }}
         </div>
       </div>
+      </div>
+
       <div class="section">
-        <h4>MAJOR ACTIVITY: <span>TRADING</span></h4>
-        <h4>SOCIAL CATEGORY OF ENTREPRENEUR: <span>OBC</span></h4>
-        <h4>NAME OF UNIT(S):</h4>
+        <h4>{{'uapcerty.section.MAJOR ACTIVITY:'| translate}} <span>{{'uapcerty.section.TRADING' | translate}}</span></h4>
+        <h4>{{ 'uapcerty.section.SOCIAL CATEGORY OF ENTREPRENEUR' | translate }} <span>{{ 'uapcerty.section.OBC' | translate }}</span></h4>
+
         <table class="table">
           <tr>
-            <th>S.No</th>
-            <th>Name of Unit(s)</th>
+            <th>{{'uapcerty.section.snum'| translate}}</th>
+            <th>{{'uapcerty.section.unit' | translate}}</th>
           </tr>
           <tr>
-            <td>1</td>
+            <td>{{'1'| translate}}</td>
             <td>{{approveById_Data?.userName}}</td>
           </tr>
         </table>
       </div>
       <div class="section">
-        <h4>OFFICIAL Detais OF ENTERPRISE:</h4>
+        <h4>{{'uapcerty.section.odf'  | translate}}</h4>
         <table class="table">
           <tr>
-            <th>User Address</th>
+            <th>{{'uapcerty.section.address' | translate}}</th>
             <td>{{ approveById_Data?.userAddress }}</td>
-            <th>User Account key</th>
+            <th>{{'uapcerty.section.key' | translate}}</th>
             <td>{{approveById_Data?.password}}</td>
           </tr>
            
           <tr>
-            <th>Bank Id</th>
+            <th>{{'uapcerty.section.id' | translate}}</th>
             <td>{{approveById_Data?.bankId}}</td>
-            <th>Application status</th>
+            <th>{{'uapcerty.section.status' | translate}}</th>
             <td>{{approveById_Data?.status}}</td>
           </tr>
           <tr>
-            <th>Branch</th>
+            <th>{{'uapcerty.section.branch' | translate}}</th>
             <td>{{approveById_Data?.branch}}</td>
-            <th>IFSC code</th>
+            <th>{{'uapcerty.section.code' | translate}}</th>
             <td>{{approveById_Data?.ifscCode}}</td>
           </tr>
           <tr>
-            <th>Mobile</th>
+            <th>{{'uapcerty.section.num' | translate}}</th>
             <td>{{ approveById_Data?.mobileNo }}</td>
-            <th>Email</th>
+            <th>{{'uapcerty.section.mail' | translate}}</th>
             <td>{{ approveById_Data?.email }}</td>
           </tr>
         </table>
       </div>
       <div class="section">
         <h4>
-          ATE OF INCORPORATION / REGISTRATION OF ENTERPRISE: <span> {{currentDate |  date:'medium'}} </span>
+          {{'uapcerty.section.reg' | translate}}: <span> {{currentDate |  date:'medium'}} </span>
         </h4>
       </div>
       <div class="footer">
         <p>
-         <b> Note: This is a system generated certificate and does not require any
-          signature.</b>
+         <b> {{'uapcerty.section.note' | translate}}</b>
         </p>
       </div>
     </div>
