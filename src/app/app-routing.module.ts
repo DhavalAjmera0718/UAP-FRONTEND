@@ -15,6 +15,7 @@ const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'dashborad',component:DashboardComponent},
     {path:'home',component:HomeComponent},
+    
     {path:'uapcerty',component:UAPCertyComponent},
  {
     path:"dashboard",
@@ -22,6 +23,9 @@ const routes: Routes = [
   },{
     path:"login",
     component:LoginComponent
+  },{
+    path:"uapcerty/:id",
+    component:UAPCertyComponent
   }
 ];
 

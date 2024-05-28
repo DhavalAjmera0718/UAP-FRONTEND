@@ -1,27 +1,32 @@
 
 <div class="container-fluid">
   <div class="row">
-      <!-- Image container -->
+
       <div class="col-12 col-md-4 image-container"></div>
-      
-      <!-- Main content container -->
+  
       <div class="col-12 col-md-8 main-content">
           <div class="container">
               <div class="row" id="dataLink">
                   <div class="col">
                       <a class="custom-link" id="linkdata" (click)="getAllPendingData()">Pending Users</a>
                   </div>
+
                   <div class="col">
-                      <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Approved Users</a>
+                      <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Approved  Users</a>
                   </div>
+
                   <div class="col">
                       <a class="custom-link" id="linkdata" (click)="getAllApprovedata()">Rejected Users</a>
                   </div>
+
+                  <div class="col">
+                    <a class="custom-link" id="linkdata" (click)="generatePdf()">Generate  PDF</a>
+                </div>
+
               </div>
           </div>
           <hr>
-          <!-- PDF content -->
-          <div id="pdfContent">
+    
               <ng-container *ngIf="allApproveData != null">
                   <table mat-table [dataSource]="allApproveData" class="mat-elevation-z8">
                 
@@ -110,7 +115,7 @@
 
 
 <table class="table table-warning table-striped-columns">
-    <tr *ngIf="allPendingData !=null">
+    <tr *ngIf="allPendingData && allPendingData.length > 0">
         <th>Index No</th>
         <th>bankId No</th>
         <th>Branch</th>
@@ -149,4 +154,3 @@
 </table>  
 
 
-<button mat-button color="primary" (click)="generatePdf()">generatePdf</button>
