@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -64,10 +64,9 @@
       }
     </style>
   </head>
-  <body #content>
-    <div class="container">
+  <body>
+    <div class="container" #content>
       <div class="header">
-       
         <h1>भारत सरकार</h1>
         <h2>Government of India</h2>
         <h3>Ministry of Micro, Small and Medium Enterprises</h3>
@@ -98,15 +97,14 @@
         </table>
       </div>
       <div class="section">
-        <h4>OFFICIAL Detais OF ENTERPRISE:</h4>
+        <h4>OFFICIAL DETAILS OF ENTERPRISE:</h4>
         <table class="table">
           <tr>
             <th>User Address</th>
-            <td>{{ approveById_Data?.userAddress }}</td>
+            <td>{{approveById_Data?.userAddress}}</td>
             <th>User Account key</th>
             <td>{{approveById_Data?.password}}</td>
           </tr>
-           
           <tr>
             <th>Bank Id</th>
             <td>{{approveById_Data?.bankId}}</td>
@@ -121,24 +119,21 @@
           </tr>
           <tr>
             <th>Mobile</th>
-            <td>{{ approveById_Data?.mobileNo }}</td>
+            <td>{{approveById_Data?.mobileNo}}</td>
             <th>Email</th>
-            <td>{{ approveById_Data?.email }}</td>
+            <td>{{approveById_Data?.email}}</td>
           </tr>
         </table>
       </div>
       <div class="section">
-        <h4>
-          ATE OF INCORPORATION / REGISTRATION OF ENTERPRISE: <span> {{currentDate |  date:'medium'}} </span>
-        </h4>
+        <h4>DATE OF INCORPORATION / REGISTRATION OF ENTERPRISE: <span>{{currentDate | date:'medium'}}</span></h4>
       </div>
       <div class="footer">
         <p>
-         <b> Note: This is a system generated certificate and does not require any
-          signature.</b>
+          <b>Note: This is a system generated certificate and does not require any signature.</b>
         </p>
       </div>
+      <button class="btn btn-primary text-center" (click)="downloadHtml()">Download</button>
     </div>
   </body>
-  <button class="btn btn-primary text-center" (click)="downloadHtml()"> Download</button>
-</html>
+<!-- </html> -->
