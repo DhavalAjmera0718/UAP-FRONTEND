@@ -1,22 +1,57 @@
+body{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27HjOVaYkLWOP-qMxIZpKBHljSKdlInUl8g&s');
+  background-size: cover;
+}
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-   
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin-top: 2%;
+  margin-left: 25%;
+  position: fixed;
+  bottom: -100%; /* Initially hide the container off-screen */
+  /* left: 0;
+  width: 100%; */
+  animation-name: slideFromBottom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; /* Keep the final state of animation */
+}
+
+@keyframes slideFromBottom {
+  from {
+      bottom: -100%; /* Start position */
   }
+  to {
+      bottom: 0; /* End position */
+  }
+}
+
+  
   form
   {
     width:  100vh;
-    border: 1px solid;
-    padding: 20px;
-    background-color: rgba(255, 254, 254, 0.603);
+    border: 1px solid white;
+    padding: 80px;
+    background-color: rgba(0, 0, 0, 0.603);
+    border-radius: 10px;
+    color: white;
+    
   }
 h1
 {
   text-align: center;
   font-size: xx-large;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+}
+img{
+  height: 35vh;
+  /* border: 1px solid; */
+  box-shadow: 0px 0px 10px 0px black;
+  margin-left: 30%;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
   mat-form-field
   {

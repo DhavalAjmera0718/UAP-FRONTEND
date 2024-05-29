@@ -1,101 +1,126 @@
 <!-- <!DOCTYPE html> -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Udyam Registration Certificate</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .container {
-        width: 80%;
-        margin: 0 auto;
-        border: 1px solid black;
-        padding: 20px;
-      }
-      .header,
-      .footer {
-        text-align: center;
-      }
-      .header img {
-        width: 50px;
-        vertical-align: middle;
-      }
-      .header h1,
-      .header h2,
-      .header h3 {
-        margin: 0;
-      }
-      .main-title {
-        text-align: center;
-        font-size: 24px;
-        margin: 20px 0;
-        text-decoration: underline;
-      }
-      .section {
-        margin-bottom: 20px;
-      }
-      .section h4 {
-        margin: 10px 0;
-      }
-      .section p {
-        margin: 5px 0;
-      }
-      .table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-      .table,
-      .table th,
-      .table td {
-        border: 1px solid black;
-      }
-      .table th,
-      .table td {
-        padding: 5px;
-        text-align: left;
-      }
-      .highlight {
-        background-color: red;
-        color: white;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container" #content>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Udyam Registration Certificate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+    .header,
+    .footer {
+      text-align: center;
+    }
+
+    .header img {
+      width: 50px;
+      vertical-align: middle;
+    }
+
+    .header h1,
+    .header h2,
+    .header h3 {
+      margin: 0;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 24px;
+      margin: 20px 0;
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h4 {
+      margin: 10px 0;
+    }
+
+    .section p {
+      margin: 5px 0;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .table,
+    .table th,
+    .table td {
+      border: 1px solid black;
+    }
+
+    .table th,
+    .table td {
+      padding: 5px;
+      text-align: left;
+    }
+
+    .highlight {
+      background-color: red;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body #content>
+  <div class="container" #content>
+    <div class="header">
+      <h1>भारत सरकार</h1>
+      <h2>Government of India</h2>
+      <h3>Ministry of Micro, Small and Medium Enterprises</h3>
+    </div> <!-- Header Div Close -->
+    <div class="main-title">UDYAM REGISTRATION CERTIFICATE</div>
+
+    <button (click)="switchLanguage('en')">English</button>
+    <button (click)="switchLanguage('gu')">Gujarati</button>
+
+    <div class="container">
       <div class="header">
-        <h1>भारत सरकार</h1>
-        <h2>Government of India</h2>
-        <h3>Ministry of Micro, Small and Medium Enterprises</h3>
-      </div>
-      <div class="main-title">UDYAM REGISTRATION CERTIFICATE</div>
-      <div class="section">
-        <h4>UDYAM REGISTRATION NUMBER: <span>UDYAM-TS-02-0080975</span></h4>
-        <h4>NAME OF ENTERPRISE: <span>Online psb loans pvt ltd</span></h4>
-        <h4>TYPE OF ENTERPRISE: <span>MICRO (Based on FY 2020-21)</span></h4>
-        <div class="highlight">
-          TRADING <br />
-          (For availing benefits of Priority Sector Lending(PSL) ONLY)
+        <h2>{{'uapcerty.Government of India' | translate }}</h2>
+        <div class="main-title">{{ 'uapcerty.UDYAM REGISTRATION CERTIFICATE' | translate }}</div>
+
+        <div class="section">
+          <h4>{{ 'uapcerty.section.UDYAM REGISTRATION NUMBER' | translate }}: <span> {{certificateNumber}} </span></h4>
+          <h4>{{ 'uapcerty.section.NAME OF ENTERPRISE' | translate }}: <span>{{'uapcerty.section.opl' | translate}}</span></h4>
+          <h4>{{ 'uapcerty.section.TYPE OF ENTERPRISE' | translate }}: <span>{{'uapcerty.section.type' | translate}}</span></h4>
+          <div class="highlight">
+            {{ 'uapcerty.section.highlight' | translate }}
+          </div>
         </div>
-      </div>
+      </div> <!-- Inner header div close -->
+
       <div class="section">
-        <h4>MAJOR ACTIVITY: <span>TRADING</span></h4>
-        <h4>SOCIAL CATEGORY OF ENTREPRENEUR: <span>OBC</span></h4>
-        <h4>NAME OF UNIT(S):</h4>
+        <h4>{{'uapcerty.section.MAJOR ACTIVITY:'| translate}} <span>{{'uapcerty.section.TRADING' | translate}}</span></h4>
+        <h4>{{ 'uapcerty.section.SOCIAL CATEGORY OF ENTREPRENEUR' | translate }} <span>{{ 'uapcerty.section.OBC' | translate }}</span></h4>
+
         <table class="table">
           <tr>
-            <th>S.No</th>
-            <th>Name of Unit(s)</th>
+            <th>{{'uapcerty.section.snum'| translate}}</th>
+            <th>{{'uapcerty.section.unit' | translate}}</th>
           </tr>
           <tr>
-            <td>1</td>
+            <td>{{'1'| translate}}</td>
             <td>{{approveById_Data?.userName}}</td>
           </tr>
         </table>
       </div>
+
       <div class="section">
         <h4>OFFICIAL DETAILS OF ENTERPRISE:</h4>
         <table class="table">
@@ -106,15 +131,15 @@
             <td>{{approveById_Data?.password}}</td>
           </tr>
           <tr>
-            <th>Bank Id</th>
+            <th>{{'uapcerty.section.id' | translate}}</th>
             <td>{{approveById_Data?.bankId}}</td>
-            <th>Application status</th>
+            <th>{{'uapcerty.section.status' | translate}}</th>
             <td>{{approveById_Data?.status}}</td>
           </tr>
           <tr>
-            <th>Branch</th>
+            <th>{{'uapcerty.section.branch' | translate}}</th>
             <td>{{approveById_Data?.branch}}</td>
-            <th>IFSC code</th>
+            <th>{{'uapcerty.section.code' | translate}}</th>
             <td>{{approveById_Data?.ifscCode}}</td>
           </tr>
           <tr>
@@ -123,17 +148,35 @@
             <th>Email</th>
             <td>{{approveById_Data?.email}}</td>
           </tr>
+          <tr>
+            <th>{{'uapcerty.section.num' | translate}}</th>
+            <td>{{approveById_Data?.mobileNo}}</td>
+            <th>{{'uapcerty.section.mail' | translate}}</th>
+            <td>{{approveById_Data?.email}}</td>
+          </tr>
         </table>
       </div>
+
       <div class="section">
         <h4>DATE OF INCORPORATION / REGISTRATION OF ENTERPRISE: <span>{{currentDate | date:'medium'}}</span></h4>
       </div>
+
       <div class="footer">
-        <p>
-          <b>Note: This is a system generated certificate and does not require any signature.</b>
-        </p>
+        <p><b>Note: This is a system generated certificate and does not require any signature.</b></p>
       </div>
+      
+      <div class="footer">
+        <p><b>{{'uapcerty.section.note' | translate}}</b></p>
+        <h4>{{'uapcerty.section.reg' | translate}}: <span>{{currentDate | date:'medium'}}</span></h4>
+      </div>
+
       <button class="btn btn-primary text-center" (click)="downloadHtml()">Download</button>
-    </div>
-  </body>
-<!-- </html> -->
+    </div> <!-- Main container div close -->
+  </div> <!-- Outer container div close -->
+
+  <button class="btn btn-primary text-center" (click)="downloadHtml()">Download</button>
+</body>
+
+
+
+</html>
